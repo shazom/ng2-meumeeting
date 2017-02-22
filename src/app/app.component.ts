@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <div>Name: {{name}}</div>
+    <div>from {{address.city}} </div>
+    <div>credit: {{creditCard}}</div>
+    <div a->Teams</div>
+    <select>
+      <option *ngFor="let team of teams">{{team}}</option>
+    </select>
+  `, 
+  
 })
 export class AppComponent {
-  title = 'app works!';
+  teams = ["Java", "C#", "Python"];
+  id= 1;
+  name= "Jennifer	Carlson";
+  address= {
+    city: "Tel-Aviv"
+  };
+  team= "Java";
+  creditCard= 5510144579856319  
 }
